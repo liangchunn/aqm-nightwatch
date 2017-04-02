@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "postinstall": "node nightwatch.conf.js",
+        "postinstall": "node getSelenium.js",
+        "update": "node getSelenium.js",
         "test": "./node_modules/.bin/nightwatch --env default"
     },
     "author": "",

@@ -1,5 +1,5 @@
-const PKG = require('./package.json'); // so we can get the version of the project
-const BINPATH = './node_modules/nightwatch/bin/'; // change if required.
+const PKG = require('./package.json');
+const BINPATH = './node_modules/nightwatch/bin/';
 const SCREENSHOT_PATH = "./screenshots/" + PKG.version + "/";
 
 const config = { 
@@ -40,21 +40,6 @@ const config = {
     }
 }
 module.exports = config;
-
-
-require('fs').stat(BINPATH + 'selenium.jar', function(err, stat) { // got it?
-    if (err || !stat || stat.size < 1) {
-        require('selenium-download').ensure(BINPATH, function(error) {
-            if (error) throw new Error(error); // no point continuing so exit!
-            console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH);
-        });
-    } else {
-        require('selenium-download').update(BINPATH, function(error) {
-            if (error) throw new Error(error);
-            console.log('✔ Selenium & Chromedriver updated!');
-        })
-    }
-});
 
 function padLeft(count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
     return count < 10 ? '0' + count : count.toString();

@@ -48,6 +48,11 @@ require('fs').stat(BINPATH + 'selenium.jar', function(err, stat) { // got it?
             if (error) throw new Error(error); // no point continuing so exit!
             console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH);
         });
+    } else {
+        require('selenium-download').update(BINPATH, function(error) {
+            if (error) throw new Error(error);
+            console.log('✔ Selenium & Chromedriver updated!');
+        })
     }
 });
 

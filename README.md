@@ -12,7 +12,7 @@ npm install
 
 ### To update Selenium and Chrome drivers:
 ```sh
-npm run postinstall
+npm run update
 ```
 
 ## Testing

@@ -1,0 +1,16 @@
+{
+    "name": "aqm-nightwatch",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "node nightwatch.conf.js",
+        "test": "./node_modules/.bin/nightwatch --env default"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "nightwatch": "^0.9.9",
+        "selenium-download": "^2.0.7"
+    }
+}

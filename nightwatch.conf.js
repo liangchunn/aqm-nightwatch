@@ -1,12 +1,12 @@
 const PKG = require('./package.json');
-const BINPATH = './node_modules/nightwatch/bin/';
-const SCREENSHOT_PATH = "./screenshots/" + PKG.version + "/";
+const BINPATH = './bin/';
+const SCREENSHOT_PATH = "./output/screenshots/" + PKG.version + "/";
 
-const config = { 
+const config = {
     "src_folders": [
         "tests"
     ],
-    "output_folder": "./reports",
+    "output_folder": "./output/reports/",
     "selenium": {
         "start_process": true,
         "server_path": BINPATH + "selenium.jar",
@@ -14,7 +14,7 @@ const config = {
         "host": "127.0.0.1",
         "port": 4444,
         "cli_args": {
-            "webdriver.chrome.driver": BINPATH + "chromedriver" 
+            "webdriver.chrome.driver": BINPATH + "chromedriver"
         }
     },
     "test_workers": { "enabled": true, "workers": "auto" },
@@ -41,18 +41,12 @@ const config = {
 }
 module.exports = config;
 
-function padLeft(count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
+function padLeft(count) {
     return count < 10 ? '0' + count : count.toString();
 }
 
-var FILECOUNT = 0; // "global" screenshot file count
-/**
- * The default is to save screenshots to the root of your project even though
- * there is a screenshots path in the config object above! ... so we need a
- * function that returns the correct path for storing our screenshots.
- * While we're at it, we are adding some meta-data to the filename, specifically
- * the Platform/Browser where the test was run and the test (file) name.
- */
+var FILECOUNT = 0;
+
 function imgpath(browser) {
     var a = browser.options.desiredCapabilities;
     var meta = [a.platform];

@@ -1,12 +1,7 @@
 node_modules/
 npm-debug.log
-nohup.out
-selenium-debug.log
+output/
+bin/
 .DS_Store
-nightwatch
-nightwatch/selenium.jar
-
-nightwatch/chromedriver
-
-reports/*
-screenshots/*
+selenium-debug.log
+nohup.out

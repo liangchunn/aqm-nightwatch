@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # aqm-nightwatch
 ## Installing
 
@@ -47,7 +46,7 @@ Reports and screenshots are saved in `reports/` and `screenshots/` under the roo
 ## Installing
 
 ### Clone the repository:
-Mac/Linux:
+Mac/Linux/Windows Powershell:
 
 ```sh
 git clone https://github.com/liangchunn/aqm-nightwatch.git && cd aqm-nightwatch
@@ -85,5 +84,4 @@ Remember to `const config = require('../nightwatch.conf.js')` and use `config.im
 Everything you need to find about Nightwatch can be found [here](http://nightwatchjs.org/api)
 
 ### Reports and screenshots
-Reports and screenshots are saved in `reports/` and `screenshots/` under the root directory
->>>>>>> origin/master
+Reports and screenshots are saved in `output/reports/` and `output/screenshots/` under the root directory

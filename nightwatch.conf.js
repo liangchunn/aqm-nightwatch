@@ -45,15 +45,15 @@ function padLeft(count) {
     return count < 10 ? '0' + count : count.toString();
 }
 
-var FILECOUNT = 0;
+let FILECOUNT = 0;
 
 function imgpath(browser) {
-    var a = browser.options.desiredCapabilities;
-    var meta = [a.platform];
+    let a = browser.options.desiredCapabilities;
+    let meta = [a.platform];
     meta.push(a.browserName ? a.browserName : 'any');
     meta.push(a.version ? a.version : 'any');
-    meta.push(a.name); // this is the test filename so always exists.
-    var metadata = meta.join('~').toLowerCase().replace(/ /g, '');
+    meta.push(a.name);
+    let metadata = meta.join('~').toLowerCase().replace(/ /g, '');
     return SCREENSHOT_PATH + metadata + '_' + padLeft(FILECOUNT++) + '_';
 }
 

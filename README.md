@@ -24,7 +24,7 @@ npm run update
 
 ## Testing
 
-## Running the server with UI
+### Running the server with UI
 To run the server:
 ```sh
 node index.js

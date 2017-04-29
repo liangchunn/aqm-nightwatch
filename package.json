@@ -1,23 +1,25 @@
 {
-    "name": "aqm-nightwatch",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "postinstall": "node ./scripts/updateSelenium.js",
-        "update": "node ./scripts/updateSelenium.js",
-        "test": "gulp test"
-    },
-    "author": "LiangChun",
-    "license": "ISC",
-    "dependencies": {
-        "nightwatch": "^0.9.9",
-        "selenium-download": "^2.0.7",
-        "gulp": "^3.9.1",
-        "gulp-jshint": "^2.0.4",
-        "gulp-nightwatch": "^0.3.2",
-        "jshint": "^2.9.4",
-        "jshint-stylish": "^2.2.1",
-        "run-sequence": "^1.2.2"
-    }
+  "name": "aqm-nightwatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node ./scripts/updateSelenium.js",
+    "update": "node ./scripts/updateSelenium.js",
+    "test": "gulp test"
+  },
+  "author": "LiangChun",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-nightwatch": "^0.3.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "nightwatch": "^0.9.9",
+    "opn": "^4.0.2",
+    "run-sequence": "^1.2.2",
+    "selenium-download": "^2.0.7"
+  }
 }

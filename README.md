@@ -24,6 +24,12 @@ npm run update
 
 ## Testing
 
+## Running the server with UI
+To run the server:
+```sh
+node index.js
+```
+
 ### Running Tests
 To run all tests in the `tests/` folder:
 ```sh

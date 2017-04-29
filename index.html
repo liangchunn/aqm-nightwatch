@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Express</title>
+    <style>
+    body {
+        font-family: 'SF Mono', monospace;
+    }
+    </style>
+</head>
+
+<body>
+    <button id="start" onclick="startSelenium()">Start Selenium</button>
+    <h3>Status: <span id="status">Pending</span></h3>
+    <script>
+    const startSelenium = () => {
+        document.getElementById('status').innerHTML = 'Running...';
+        document.getElementById('start').disabled = true;
+
+        const req = new XMLHttpRequest();
+
+        // Function to be invoked every time the state of the XMLHttpRequest changes
+        req.onreadystatechange = () => {
+            if (req.readyState === 4 && req.status === 200) {
+                document.getElementById('status').innerHTML = req.responseText;
+                document.getElementById('start').disabled = false;
+            }
+        }
+
+        // Send the async request to the backend to start the task
+        req.open("GET", "http://localhost:8081/start", true);
+        req.send(null);
+    }
+    </script>
+</body>
+
+</html>
